@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button secondActivityBtn = (Button) findViewById(R.id.secondActivityBtn);
         Button googleBtn = (Button) findViewById(R.id.googleBtn);
+        Button listActivityBtn = (Button) findViewById(R.id.listActivityBtn);
 
         secondActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 if (goToGoogle.resolveActivity(getPackageManager()) !=null){
                     startActivity(goToGoogle);
                 }
+            }
+        });
+
+        listActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startListAct = new Intent(getApplicationContext(), ListActivity.class);
+                startActivity(startListAct);
             }
         });
     }
